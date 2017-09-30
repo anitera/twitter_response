@@ -17,6 +17,7 @@ def remove_stop_words(text):
     filtered_words = list(filter(lambda x: x not in stop_words, text))
     return filtered_words
 
+nltk.download("popular")
 with open("..\\gather_data\\text.txt") as f:
     data = f.read()
 data = data.decode('ascii', 'ignore')
