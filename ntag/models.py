@@ -6,6 +6,11 @@ from django.db import models
 # Create your models here.
 class Tag(models.Model):
 	tag = models.CharField(max_length=140, unique=True)
-	image = models.ImageField(upload_to='', blank=True, null=True)
+	bad_words = models.ImageField(upload_to='tag', blank=True, null=True)
+	common_words = models.ImageField(upload_to='tag', blank=True, null=True)
+	good_words = models.ImageField(upload_to='tag', blank=True, null=True)
+	piechart = models.ImageField(upload_to='tag', blank=True, null=True)
+
+
 
 

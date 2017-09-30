@@ -39,10 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Graphics</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Tables</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Graphics</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">Location</a>
@@ -61,48 +58,13 @@
         <div class="intro-text">
           <div class="intro-lead-in">Tere tulemast!</div>
           <div class="intro-heading">Feel free to understand people's needs!</div>
+          <p> {{ tag }} </p>
           <a class="btn btn-xl js-scroll-trigger" href="#services">Search tag</a>
         </div>
       </div>
     </header>
 
     <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Graphics</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Portfolio Grid -->
     <section class="bg-light" id="portfolio">
@@ -122,11 +84,58 @@
                   <i class="fa fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.image }}" alt="">
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.bad_words.url }}" alt="">
             </a>
             <div class="portfolio-caption">
               <h4>{{ item.tag }}</h4>
-              <p class="text-muted">Positive and Negative percentage</p>
+              <p class="text-muted">Most frequent bad words in tweets.</p>
+            </div>
+          
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.common_words.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ item.tag }}</h4>
+              <p class="text-muted">Most common words in tweets.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.good_words.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ item.tag }}</h4>
+              <p class="text-muted">Most frequent good words in tweets.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.piechart.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ item.tag }}</h4>
+              <p class="text-muted">Good vs Bad tweets.</p>
             </div>
           </div>
 
