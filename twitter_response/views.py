@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.messages import get_messages
 from ntag.models import Tag
+from ntag.forms import InsertTag
+#from .gather_data import searchtag
+#from .sentemet_analysys import semantic_script
 
 
 # Create your views here.
@@ -14,5 +17,12 @@ from ntag.models import Tag
 #from .models import Category, Product, Certificate, Increment
 
 def Taglist(request, category_slug=None):
+	form = InsertTag(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+        	tag = form.cleaned_data['tag']
+        	#searchtag.datarun(tag)
+        	#sentement()
+
 	tags = Tag.objects.all()
 	return render(request, 'index.html', {'tags': tags})

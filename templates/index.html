@@ -58,8 +58,19 @@
         <div class="intro-text">
           <div class="intro-lead-in">Tere tulemast!</div>
           <div class="intro-heading">Feel free to understand people's needs!</div>
-          <p> {{ tag }} </p>
-          <a class="btn btn-xl js-scroll-trigger" href="#services">Search tag</a>
+          <form action="/your-name/" method="post">
+              <label for="your_name">Insert tag: </label>
+              <input value="{{ tag }}">
+              <input class="btn btn-xl js-scroll-trigger" type="submit" value="Search tag">
+          </form>
+
+          {% block content %}
+          <h1>New post</h1>
+          <form method="POST" class="post-form">{% csrf_token %}
+            {{ form }}
+          <button type="submit" class="save btn btn-default">Search tag</button>
+          </form>
+          {% endblock %}
         </div>
       </div>
     </header>
