@@ -1,0 +1,61 @@
+<div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ item.bad_words.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ tag }}</h4>
+              <p class="text-muted">Most frequent bad words in tweets.</p>
+            </div>
+          
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ common_words.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ tag }}</h4>
+              <p class="text-muted">Most common words in tweets.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ good_words.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ tag }}</h4>
+              <p class="text-muted">Most frequent good words in tweets.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+              <img class="simg-fluid" src="{{ MEDIA_URL }}{{ piechart.url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{ tag }}</h4>
+              <p class="text-muted">Good vs Bad tweets.</p>
+            </div>
+          </div>

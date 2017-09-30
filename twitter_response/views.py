@@ -8,8 +8,8 @@ from django.contrib import messages
 from django.contrib.messages import get_messages
 from ntag.models import Tag
 from ntag.forms import InsertTag
-#from .gather_data import searchtag
-#from .sentemet_analysys import semantic_script
+from ntag.searchtag import datarun
+from ntag.semantic_script import semantic
 
 
 # Create your views here.
@@ -21,8 +21,15 @@ def Taglist(request, category_slug=None):
         # check whether it's valid:
         if form.is_valid():
         	tag = form.cleaned_data['tag']
-        	#searchtag.datarun(tag)
-        	#sentement()
+        	datarun(tag)
+        	semantic()
+        	current = Tag()
+        	current.tag = tag
+        	current.bad_words = "../semantic_output/bad_words.jpg"
+        	current.common_words = "../semantic_output/common_words.jpg"
+        	current.good_words = "../semantic_output/good_words.jpg"
+        	current.piechart = "../semantic_output/piechart.jpg"
+        	return render(request, 'list.html', {'current': current})
 
 	tags = Tag.objects.all()
-	return render(request, 'index.html', {'tags': tags})
+	return render(request, 'index.html', {'tags': tags, 'form': form})

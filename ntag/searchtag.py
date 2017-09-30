@@ -49,7 +49,7 @@ class MyStreamListener(tweepy.StreamListener):
 
 def datarun(tag):
 	auth = load_api()
-	myStream = tweepy.Stream(auth, listener=MyStreamListener(time_limit=420))
+	myStream = tweepy.Stream(auth, listener=MyStreamListener(time_limit=60))
 	myStream.filter(track=['#'+tag])
 
 	ccode = "US"
