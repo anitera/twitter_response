@@ -13,12 +13,15 @@ def stemmer(doc_words):
     return stemmed_words
 
 def remove_stop_words(text):
-    stop_words = set(stopwords.words('english'))
+    bad_words = ["like", "follow", "http", "https", "click", "-tag"]
+    stop_words = list(set(stopwords.words('english')))
+    for k in bad_words:
+        stop_words.append(k)
+    stop_words = set(stop_words)
     filtered_words = list(filter(lambda x: x not in stop_words, text))
     return filtered_words
 
-nltk.download("popular")
-with open("..\\gather_data\\text.txt") as f:
+with open("..\\gather_data\\data_token.txt") as f:
     data = f.read()
 data = data.decode('ascii', 'ignore')
 doc_words = re.sub(r'[".,!?()@#$%^&*{}]', '', data)
