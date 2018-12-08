@@ -13,10 +13,10 @@ import io
 import re
 
 def load_api():
-    consumer_key = '9Pls4VOFjj8fPRNc5XLWXQbPF'
-    consumer_secret = '8z4wjK5aJ9j1KQl5qxiskG5pL5hyutcbc45psahzEpuIrDFKVx'
-    access_token = '854038913727516672-9Dt0RaINnUz0lLju6bV9pE7PVhxcAxB'
-    access_secret = 'LlnU8ri5SWakSDpWmntWBoxCCJwhmsGvpi911FLy3Jg8H'
+    consumer_key = # some_key
+    consumer_secret = # secret
+    access_token = # access token
+    access_secret = # access secret
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     return auth
